@@ -1,0 +1,23 @@
+$white: #fff;
+$bg-color: #f7f7f7;
+$primary: #0094ff;
+$main-title: #2B4164;
+$sub-title: #4A5D7C;
+$form-bg: #F7F7F7;
+$border_lines: #DBE8F0;
+$border_lines_2: #F7FAFC;
+$body: #748AAD;
+$light-green: #41E2B0;
+$search-form-bg: #D0D7EA;
+
+$sidebar-width : 254px;
+$sidebar-width : 254px;
+//  $sidebar-transition : 254px;
+// CUSTOM THEME
+$theme-colors: (
+  "primary": $primary,
+  "main-title": $main-title,
+  "sub-title": $sub-title,
+  "_body": $body,
+  "border_lines_2": $border_lines_2
+);

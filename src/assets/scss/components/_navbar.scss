@@ -1,0 +1,9 @@
+.navbar {
+    // border-bottom: $navbar-border-bottom;
+    // box-shadow: $navbar-box-shadow;
+  
+    @include media-breakpoint-down(md) {
+      width: 100vw;
+    }
+  }
+  

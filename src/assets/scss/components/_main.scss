@@ -1,0 +1,35 @@
+.main {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  min-width: 0;
+  transition: $sidebar-transition;
+  flex-direction: column;
+  // background-color: #F7FAFC;
+  background: url("../../images/backgrounds/auth-bg.png"); 
+  //background-color: red;
+
+  @include media-breakpoint-down(md) {
+    // overflow-y: hidden;
+  }
+}
+
+
+.airtime-border{
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  border: 1px solid $search-form-bg;
+  border-radius: 5px;
+  margin-top: 10px;
+  height: 103px;
+  img{
+    max-width: 70px;
+  }
+  &.active{
+    background: #FAFCFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 10px 20px #B4B4B440;
+    border: 0.5px solid #0094F8;
+    border-radius: 5px;
+    opacity: 1;
+  }
+}

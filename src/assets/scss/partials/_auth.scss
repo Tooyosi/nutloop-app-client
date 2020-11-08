@@ -1,0 +1,19 @@
+.login{
+    min-height: 100vh;
+    .card{
+        background-color: $white;
+        box-shadow: 0px 20px 30px #AFBEC608;
+        border-radius: 5px;
+        border: none;
+        img{        
+            width: 167px;
+            height: 41px;
+        }
+    }
+}
+
+.auth-bg{
+    background: url("../../images/backgrounds/auth-bg.png"); 
+    background-attachment:scroll; 
+    background-size: cover;
+}
