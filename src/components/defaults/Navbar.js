@@ -1,24 +1,33 @@
 import React from 'react'
-import { Navbar } from 'reactstrap'
+import { Navbar, Input } from 'reactstrap'
 import { useSelector, useDispatch } from 'react-redux'
-
+import UserIcon from '../../assets/images/svg/icons/ic_user.svg'
+import SearchIcon from '../../assets/images/svg/icons/ic_search.svg'
 export default function NavbarComponent(props) {
   const { user } = useSelector(state => state)
 
   return (
     <Navbar color="transparent" expand>
-      <div className="collapse navbar-collapse dont-collapse-sm"
-        id="navbarNavDropdown-7">
+      <div className="row w-100">
+        <div className="col-md-3 order-md-1 order-2 text-sm-center">
+          <div className="search-div d-flex px-3">
+            <img src={SearchIcon} width="15" />
 
-        <button type="button" id="sidebarCollapse" className="btn  d-lg-none mr-2" onClick={props.updateToggle}>
-          <i className="icofont-align-left"></i>
+            <Input type="search" placeholder="What would you like to buy today?" />
+          </div>
+
+
+          
+        </div>
+
+        <div className="col-md-9 order-md-2 order-1 text-md-right">
+          <button type="button" id="sidebarCollapse" className="btn btn-success mr-2" onClick={props.updateToggle}>
+            Login
         </button>
-      </div>
-      <div className="col-6 text-right">
-        <div className="mr-1 d-inline">
-          <img src={require ('../../assets/images/svg/icons/ic_notifications.svg')} width="15" className="mr-1" />
-          Notifications</div>
-        <span className="text-capitalize">{user.user?.user?.first_name} {user.user?.user?.last_name}</span>
+          {/* <img src={require('../../assets/images/svg/icons/ic_user.svg')} width="15" className="mr-1" /> */}
+          <img src={UserIcon} width="25" className="mr-1" />
+          <span className="text-success">Hi Josh,</span>
+        </div>
       </div>
 
     </Navbar >

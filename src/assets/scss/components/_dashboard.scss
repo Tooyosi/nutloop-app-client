@@ -1,6 +1,24 @@
-.bank-slider{
-    width: 75%;
-  @media (min-width: 1px) and (max-width: #{map-get($grid-breakpoints, 'lg') - .02px}) {
-    width: 100%;
+.ordering-sales{
+  background: $yellow url("../../images/backgrounds/ordering_bg.png") -100px -413% 
+  padding-box !important;
+  border-radius: 5px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  p{
+    font-size: 10px;
+    line-height: 15px;
+  }
+}
+.ordering{
+  background: red url("../../images/backgrounds/ordering_bg.png") -100px -413% 
+  padding-box !important;
+  border-radius: 5px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  p{
+    font-size: 10px;
+    line-height: 15px;
   }
 }

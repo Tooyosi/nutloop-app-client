@@ -8,7 +8,9 @@ $border_lines: #DBE8F0;
 $border_lines_2: #F7FAFC;
 $body: #748AAD;
 $light-green: #41E2B0;
-$search-form-bg: #D0D7EA;
+$success: #80C46D;
+$search-form-bg: #E5E5E5;
+$yellow: #EDB717;
 
 $sidebar-width : 254px;
 $sidebar-width : 254px;
@@ -16,6 +18,7 @@ $sidebar-width : 254px;
 // CUSTOM THEME
 $theme-colors: (
   "primary": $primary,
+  "success": $success,
   "main-title": $main-title,
   "sub-title": $sub-title,
   "_body": $body,

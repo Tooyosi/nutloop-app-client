@@ -6,11 +6,8 @@ import Main from "../components/common/Main"
 import Wrapper from "../components/common/Wrapper"
 import Navbar from '../components/defaults/Navbar'
 import { Container } from 'reactstrap'
-import Transfer from '../pages/Transfer'
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleAirtime, toggleBillsPay, toggleTransfer } from '../redux/actions/popupAction'
-import BillsPayment from '../pages/BillsPayment/BillsPayment'
-import BuyAirtime from '../pages/AirtimeAndData'
 export default function Dashboard({ children }) {
     let [toggled, setToggled] = useState(false)
     const state = useSelector(state => state)
@@ -20,20 +17,17 @@ export default function Dashboard({ children }) {
     }
     return (
         <AuthGuard>
-            <LoggedInGuard>
+            {/* <LoggedInGuard> */}
                 <Wrapper>
-                    <Sidebar isToggled={toggled} />
+                    {/* <Sidebar isToggled={toggled} /> */}
                     <Main>
                         <Navbar updateToggle={updateToggle} />
                         <Container fluid>
                             {children}
                         </Container>
                     </Main>
-                    <Transfer modal={state.popup.showSendMoney} toggle={()=> dispatch(toggleTransfer())}/>
-                    <BillsPayment modal={state.popup.showPayBills} toggle={()=> dispatch(toggleBillsPay())}/>
-                    <BuyAirtime modal={state.popup.showBuyAirtime} toggle={()=> dispatch(toggleAirtime())}/>
                 </Wrapper>
-            </LoggedInGuard>
+            {/* </LoggedInGuard> */}
         </AuthGuard>
     )
 }

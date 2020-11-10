@@ -11,10 +11,21 @@
 }
 
 
-input[type="search"]{
+.search-div{
     background-color: $search-form-bg;
-    &:focus{
-        background-color: $search-form-bg;
+    img{
+        background: inherit;
+    }
+    input{
+        border-radius: 0;
+        background: inherit;
+    }
+
+    input:focus{
+        background-color: $search-form-bg
+    }
+    &:focus-within{
+        // background-color: $search-form-bg;
     }
 }
 .form-control.is-invalid{
