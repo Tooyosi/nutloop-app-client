@@ -9,12 +9,5 @@ import beneficiaryReducer from "./beneficiaryReducer"
 import billersReducer from "./billersReducer"
 
 export default combineReducers({
-    auth: authReducer,
-    user: userReducer,
-    fis: fiReducer,
-    bankProfile: bankProfileReducer,
     popup: popupReducer,
-    activeBank: activeBankReducer,
-    beneficiary: beneficiaryReducer,
-    billers: billersReducer
 })

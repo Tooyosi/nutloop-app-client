@@ -19,13 +19,13 @@
       padding-top: 10px;
       padding-bottom: 10px;
       padding-left: 10px;
-      color: $body !important;
+      // color: $body !important;
       a:hover {
         text-decoration: none;
       }
     }
     .sidebar-item.active {
-      border-left: 5px solid $light-green;
+      border-left: 5px solid $success;
     }
     img {
       margin-right: 20px;

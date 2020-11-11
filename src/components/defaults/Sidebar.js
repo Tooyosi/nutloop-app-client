@@ -9,7 +9,6 @@ import {
 } from 'reactstrap';
 import routes from '../../routes';
 import Logo from '../common/Logo';
-import BanksDropdown from '../common/BanksDropdown';
 // import { toggleSidebar } from '../../redux/actions/sidebarActions';
 // import FixedSidebar from './FixedSidebar';
 // import $ from 'jquery';
@@ -154,14 +153,13 @@ class Sidebar extends Component {
                 <PerfectScrollbar>
 
                   <div className="sidebar-brand">
-                    <Link to="/">
+                    {/* <Link to="/">
                       <Logo style={{ maxWidth: "160px" }} alt="MerchantBox" />
-                    </Link>
+                    </Link> */}
                   </div>
 
                   {/* Dynamo Logo */}
 
-                  <BanksDropdown className="px-3 py-2 mt-3" />
                   <ul className="sidebar-nav">
                     {routes.map((category, index) => {
                       return (

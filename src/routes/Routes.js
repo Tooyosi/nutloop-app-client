@@ -51,8 +51,8 @@ const Routes = () => (
   <Router>
     <ScrollToTop>
       <Switch>
-        {childRoutes(DashboardLayout, landingRoutes)}
-        {/* {childRoutes(DashboardLayout, dashboardRoutes)} */}
+        {/* {childRoutes(DashboardLayout, landingRoutes)} */}
+        {childRoutes(DashboardLayout, dashboardRoutes)}
         {/*{childRoutes(AdminDashboardLayout, adminDashboardRoutes)}*/}
         <Redirect from="/dashboard/*" to="/dashboard"/>
         <Redirect from="*" to="/"/>

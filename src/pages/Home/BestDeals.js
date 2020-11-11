@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import CarouselSlide from 'react-multi-carousel';
 import TomatoesImg from "../../assets/images/icons/ic_tomatoes.png"
 import { Button, Row, Col } from 'reactstrap';
-export default function BestDeals() {
+export default function BestDeals(props) {
     return (
         <Row className="mt-4">
             <div className="col-6">
@@ -65,61 +65,61 @@ export default function BestDeals() {
                         <img src={TomatoesImg} />
                         <p>Tomatoes</p>
                         <p className="small">N125/kg</p>
-                        <Button color="success">Add to cart</Button>
+                        <Button onClick={props.toggleAddToCart} color="success">Add to cart</Button>
                     </div>
                     <div className="product-div">
                         <img src={TomatoesImg} />
                         <p>Tomatoes</p>
                         <p className="small">N125/kg</p>
-                        <Button color="success">Add to cart</Button>
+                        <Button onClick={props.toggleAddToCart} color="success">Add to cart</Button>
                     </div>
                     <div className="product-div">
                         <img src={TomatoesImg} />
                         <p>Tomatoes</p>
                         <p className="small">N125/kg</p>
-                        <Button color="success">Add to cart</Button>
+                        <Button onClick={props.toggleAddToCart} color="success">Add to cart</Button>
                     </div>
                     <div className="product-div">
                         <img src={TomatoesImg} />
                         <p>Tomatoes</p>
                         <p className="small">N125/kg</p>
-                        <Button color="success">Add to cart</Button>
+                        <Button onClick={props.toggleAddToCart} color="success">Add to cart</Button>
                     </div>
                     <div className="product-div">
                         <img src={TomatoesImg} />
                         <p>Tomatoes</p>
                         <p className="small">N125/kg</p>
-                        <Button color="success">Add to cart</Button>
+                        <Button onClick={props.toggleAddToCart} color="success">Add to cart</Button>
                     </div>
                     <div className="product-div">
                         <img src={TomatoesImg} />
                         <p>Tomatoes</p>
                         <p className="small">N125/kg</p>
-                        <Button color="success">Add to cart</Button>
+                        <Button onClick={props.toggleAddToCart} color="success">Add to cart</Button>
                     </div>
                     <div className="product-div">
                         <img src={TomatoesImg} />
                         <p>Tomatoes</p>
                         <p className="small">N125/kg</p>
-                        <Button color="success">Add to cart</Button>
+                        <Button onClick={props.toggleAddToCart} color="success">Add to cart</Button>
                     </div>
                     <div className="product-div">
                         <img src={TomatoesImg} />
                         <p>Tomatoes</p>
                         <p className="small">N125/kg</p>
-                        <Button color="success">Add to cart</Button>
+                        <Button onClick={props.toggleAddToCart} color="success">Add to cart</Button>
                     </div>
                     <div className="product-div">
                         <img src={TomatoesImg} />
                         <p>Tomatoes</p>
                         <p className="small">N125/kg</p>
-                        <Button color="success">Add to cart</Button>
+                        <Button onClick={props.toggleAddToCart} color="success">Add to cart</Button>
                     </div>
                     <div className="product-div">
                         <img src={TomatoesImg} />
                         <p>Tomatoes</p>
                         <p className="small">N125/kg</p>
-                        <Button color="success">Add to cart</Button>
+                        <Button onClick={props.toggleAddToCart} color="success">Add to cart</Button>
                     </div>
                 </CarouselSlide>
             </div>

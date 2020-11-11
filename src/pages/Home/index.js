@@ -2,13 +2,19 @@ import React from 'react';
 import { Row, Col } from 'reactstrap';
 import BestDeals from './BestDeals';
 import TopSelling from './TopSelling';
+import { toggleAddToCart } from '../../redux/actions/popupAction';
+import {useDispatch} from 'react-redux'
 
 function Home(props) {
+    const dispatch = useDispatch()
+    let shoModal = ()=>{
+            dispatch(toggleAddToCart())
+    }
     return (
         <>
             <Row>
                 <Col sm="12">
-                    <BestDeals />
+                    <BestDeals toggleAddToCart={shoModal} />
                 </Col>
             </Row>
             <hr />
@@ -27,7 +33,7 @@ function Home(props) {
                 </div>
             </Row>
             <hr />
-            <TopSelling />
+            <TopSelling toggleAddToCart={shoModal} />
             <hr className="mb-2" />
 
         </>
