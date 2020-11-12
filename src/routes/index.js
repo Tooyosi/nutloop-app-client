@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Home from '../pages/Home';
 import Icofont from 'react-icofont';
+import Products from '../pages/Products';
 const landingRoutes = {
     path: "/",
     name: "Dashboard",
@@ -32,14 +33,26 @@ const dashboardRoutes = {
     image: (<Icofont icon="home" size="1" className="mr-1" />),
     component: Home
   };
+
+  const productsRoutes = {
+    path: "/products",
+    name: "Products",
+    withHeader: true,
+    badgeColor: "primary",
+    children: null,
+    image: (<Icofont icon="listine-dots" size="1" className="mr-1" />),
+    component: Products
+  };
   
 export const landing = [landingRoutes];
 
 
 export const dashboard = [
-    dashboardRoutes
+    productsRoutes,
+    dashboardRoutes,
 ]
 
 export default [
-    dashboardRoutes
+    dashboardRoutes,
+    productsRoutes
 ]
