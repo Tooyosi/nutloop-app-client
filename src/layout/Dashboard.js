@@ -10,10 +10,15 @@ import { useDispatch, useSelector } from 'react-redux'
 import { toggleAddToCart } from '../redux/actions/popupAction'
 import CustomModal from '../components/UI/Modal/CustomModal'
 import Icofont from "react-icofont"
+import { setCartItems } from '../redux/actions/cartActions'
+import CartGuard from '../routes/guards/CartGuard'
+import Footer from '../components/defaults/Footer'
+
 const AddToCartForm = (props) => {
     let [number, setNumber] = useState(0)
     let [formState, setFormState] = useState(1)
-
+    let dispatch = useDispatch(null)
+    const state = useSelector(state => state)
     let buttonClick = ({ target: { id } }) => {
         switch (id) {
             case "increase":
@@ -27,10 +32,16 @@ const AddToCartForm = (props) => {
 
     let doAddToCart = (e) => {
         e.preventDefault()
+        let newItem = {
+            ...state.cart.cartItem.item,
+            quantity: number
+        }
+        localStorage.setItem("cart", JSON.stringify([...state.cart.cartItems, newItem]))
+        dispatch(setCartItems([...state.cart.cartItems, newItem]))
         setFormState(2)
     }
 
-    let doCancel = ()=> {
+    let doCancel = () => {
         setFormState(1)
         setNumber(0)
         props.toggle()
@@ -51,14 +62,14 @@ const AddToCartForm = (props) => {
                     <Form onSubmit={doAddToCart}>
                         <Row>
                             <Col className="text-center" sm="12">
-                                <p>Enter Quantity for <span className="text-success">Apple</span></p>
+                                <p>Enter Quantity for <span className="text-success text-capitalize">{state.cart ?.cartItem ?.item ?.name}</span></p>
                                 <div className="buttons my-3">
                                     <ButtonGroup>
-                                        <Button onClick={buttonClick} id="increase" type="button" className="btn-success">+</Button>
-                                        <input type="number" min="0" value={number} onChange={({ target: { value } }) => setNumber(parseInt(value))} />
-
                                         <Button onClick={buttonClick} id="decrease" type="button" className="btn-success">-</Button>
+                                        <input type="number" min="0" value={number} onChange={({ target: { value } }) => setNumber(parseInt(value))} />
+                                        <Button onClick={buttonClick} id="increase" type="button" className="btn-success">+</Button>
                                     </ButtonGroup>
+                                    <p className="small my-2">You have selected: <span className="text-success ">{number}kg</span></p>
                                 </div>
 
                                 <Button color="success" className="btn-block text-white">Add to Cart</Button>
@@ -90,19 +101,22 @@ export default function Dashboard({ children }) {
     }
     return (
         <AuthGuard>
-            {/* <LoggedInGuard> */}
-            <Wrapper>
-                <Sidebar isToggled={toggled} />
-                <Main>
-                    <Navbar updateToggle={updateToggle} />
-                    <Container fluid>
-                        {children}
-                    </Container>
-                    {console.log({ state })}
-                    <AddToCartForm toggle={() => { dispatch(toggleAddToCart()) }} modal={state.popup.showAddToCart} />
-                </Main>
-            </Wrapper>
-            {/* </LoggedInGuard> */}
+            <CartGuard>
+                <Wrapper>
+                    <Sidebar isToggled={toggled} />
+                    <Main>
+                        <Navbar updateToggle={updateToggle} />
+                        <div className="content">
+                            <Container fluid >
+                                {children}
+                            </Container>
+                        </div>
+                        <Footer />
+
+                        <AddToCartForm toggle={() => { dispatch(toggleAddToCart()) }} modal={state.popup.showAddToCart} />
+                    </Main>
+                </Wrapper>
+            </CartGuard>
         </AuthGuard>
     )
 }

@@ -3,10 +3,12 @@
     border-radius: 5px;
     opacity: 1;
     border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
     &:focus{
         outline: none;
         border: none;
         box-shadow: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.15);
     }
 }
 

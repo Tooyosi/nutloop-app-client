@@ -11,6 +11,7 @@
     margin-bottom: 10px;
     padding-bottom: 10px;
     text-align: center;
+    background-color: $white;
     p{
         font-size: 14px;
         margin-bottom: 2px;
@@ -36,6 +37,6 @@
     }
 }
 
-.categories{
-    
+.card{
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);    
 }

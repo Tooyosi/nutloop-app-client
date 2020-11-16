@@ -3,21 +3,23 @@
         border-radius: 30px 30px 5px 5px !important;
     }
 
-    .buttons{
-        button{
-            background-color: rgba(128, 196, 109, 0.25);
-            &:hover{
-                color: black;
-            }
+    
+}
+
+.buttons{
+    button{
+        background-color: rgba(128, 196, 109, 0.25);
+        &:hover{
+            color: black;
         }
-        input{
-            background-color: rgba(128, 196, 109, 0.25);
-            outline: none;
-            border: none;
-            width: 57px;
-            text-align: center;
-            border-top: 1px solid $success;
-            border-bottom: 1px solid $success;
-        }
+    }
+    input{
+        background-color: rgba(128, 196, 109, 0.25);
+        outline: none;
+        border: none;
+        width: 57px;
+        text-align: center;
+        border-top: 1px solid $success;
+        border-bottom: 1px solid $success;
     }
 }

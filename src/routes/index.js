@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Home from '../pages/Home';
 import Icofont from 'react-icofont';
 import Products from '../pages/Products';
+import Cart from '../pages/Cart';
+import Checkout from '../pages/Checkout';
 const landingRoutes = {
     path: "/",
     name: "Dashboard",
@@ -44,15 +46,38 @@ const dashboardRoutes = {
     component: Products
   };
   
+  const cartRoutes = {
+    path: "/cart",
+    name: "Cart",
+    withHeader: true,
+    badgeColor: "primary",
+    children: null,
+    image: (<Icofont icon="cart-alt" size="1" className="mr-1" />),
+    component: Cart
+  };
+
+  const checkoutRoutes = {
+    path: "/checkout",
+    name: "Checkout",
+    withHeader: true,
+    badgeColor: "primary",
+    children: null,
+    image: (<Icofont icon="cart-alt" size="1" className="mr-1" />),
+    component: Checkout
+  };
+  
 export const landing = [landingRoutes];
 
 
 export const dashboard = [
     productsRoutes,
+    cartRoutes,
+    checkoutRoutes,
     dashboardRoutes,
 ]
 
 export default [
     dashboardRoutes,
-    productsRoutes
+    productsRoutes,
+    cartRoutes
 ]

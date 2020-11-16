@@ -6,8 +6,9 @@ import bankProfileReducer from "./bankProfileReducer"
 import popupReducer from "./popupReducer"
 import activeBankReducer from "./activeBankReducer"
 import beneficiaryReducer from "./beneficiaryReducer"
-import billersReducer from "./billersReducer"
+import cartReducer from "./cartReducer"
 
 export default combineReducers({
     popup: popupReducer,
+    cart: cartReducer
 })

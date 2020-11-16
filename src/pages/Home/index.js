@@ -3,18 +3,24 @@ import { Row, Col } from 'reactstrap';
 import BestDeals from './BestDeals';
 import TopSelling from './TopSelling';
 import { toggleAddToCart } from '../../redux/actions/popupAction';
-import {useDispatch} from 'react-redux'
+import { useDispatch } from 'react-redux'
+import AdsComponent from './AdsComponent';
 
 function Home(props) {
     const dispatch = useDispatch()
-    let shoModal = ()=>{
-            dispatch(toggleAddToCart())
+    let shoModal = () => {
+        dispatch(toggleAddToCart())
     }
     return (
         <>
             <Row>
                 <Col sm="12">
-                    <BestDeals toggleAddToCart={shoModal} />
+                    <AdsComponent toggleAddToCart={shoModal} />
+                </Col>
+            </Row>
+            <Row>
+                <Col sm="12">
+                    <BestDeals toggleAddToCart={shoModal} header="Best Deals" link={{text: "All Products", to: "/products"}} data={[]}/>
                 </Col>
             </Row>
             <hr />
