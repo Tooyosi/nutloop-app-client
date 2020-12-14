@@ -15,12 +15,14 @@
 
 .search-div{
     background-color: $search-form-bg;
+    width: 100%;
     img{
         background: inherit;
     }
-    input{
+    input, .form-control{
         border-radius: 0;
         background: inherit;
+        border: none;
     }
 
     input:focus{
@@ -65,3 +67,41 @@ input[type=number] {
         color: $white;
     }
 }
+
+.floating-label {
+    position:  relative;
+    margin-bottom:  10px;
+    width:  100%;
+    label {
+      position:  absolute;
+      top: calc(50% - 15px);
+      left:  0;
+      opacity:  0;
+      transition:  all .3s ease;
+      //padding-left:  44px;
+    }
+    input {
+      width:  100%;
+      margin-left:  auto;
+      display:  flex;
+    }
+
+    input:not(:placeholder-shown) {
+      padding:  28px 0px 12px 0px;
+    }
+    input:not(:placeholder-shown) + label {
+      transform:  translateY(-10px);
+      opacity:  1;
+    }
+    input:valid:not(:placeholder-shown) + label + .icon {
+      svg {
+        opacity:  1;
+        path {
+        }
+      }
+    }
+    input:not(:valid):not(:focus) + label + .icon {
+      animation-name: shake-shake;
+      animation-duration: .3s;
+    }
+  }

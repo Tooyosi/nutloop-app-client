@@ -2,16 +2,22 @@ import React, { useState } from 'react'
 import { Link } from "react-router-dom"
 import { useSelector } from "react-redux"
 import CartList from './CartList'
-import { Row, Col, Collapse, FormGroup, Input, Label } from 'reactstrap'
+import { Row, Col, Collapse, FormGroup, Input, Label, Button } from 'reactstrap'
 import AddressForm from './AddressForm'
 import SupportedCards from "../../assets/images/svg/icons/ic_cards.svg"
+import CustomModal from '../../components/UI/Modal/CustomModal'
+import Icofont from "react-icofont"
+
 export default function Checkout() {
     const state = useSelector(state => state)
     const [isOpen, setIsOpen] = useState(false);
+    const [isSuccessOpen, setIsSuccessOpen] = useState(false);
     const [isDeliveryOpen, setIsDeliveryOpen] = useState(false);
 
     const toggle = () => setIsOpen(!isOpen);
     const toggleDelivery = () => setIsDeliveryOpen(!isDeliveryOpen);
+
+    const toggleSuccess = () => setIsSuccessOpen(!isSuccessOpen)
 
     return (
         <>
@@ -86,13 +92,31 @@ export default function Checkout() {
                     <p className="font-weight-bold float-right">N7,900</p>
                 </Col>
                 <Col sm={12} className="text-center">
-                <button className=" btn btn-success rounded-5 text-white small px-5">Place Order</button>
-                    
+                    <button onClick={toggleSuccess} className=" btn btn-success rounded-5 text-white small px-5">Place Order</button>
+
                 </Col>
             </Row>
             <AddressForm
                 modal={isDeliveryOpen}
                 toggle={toggleDelivery} />
+
+            <CustomModal
+                modal={isSuccessOpen}
+                keyboard={false}
+                classProp="modal-sm"
+                backdrop="static"
+                toggle={()=> window.location.href = "/products"}>
+                <Row>
+                    <Col className="text-center">
+                        <p className="small">Order Successful</p>
+                        <Icofont icon="check-circled" size="5" className="text-success " />
+
+                        <Link to="/products" className="btn btn-success btn-block text-white my-3">Continue Shopping</Link>
+                        <Link to="/orders/1" className="btn btn-outline-success btn-block">Proceed to track order</Link>
+
+                    </Col>
+                </Row>
+            </CustomModal>
         </>
     )
 }

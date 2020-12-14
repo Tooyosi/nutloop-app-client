@@ -15,7 +15,6 @@ export default function MultiCaroucel(props) {
             focusOnSelect={false}
             infinite
             keyBoardControl={true}
-
             minimumTouchDrag={80}
             renderButtonGroupOutside={false}
             renderDotsOutside={false}
@@ -49,6 +48,7 @@ export default function MultiCaroucel(props) {
             sliderClass=""
             slidesToSlide={1}
             swipeable={true}
+            autoPlay={props.autoPlay || false}
         >
             {props.children}
         </CarouselSlide>
