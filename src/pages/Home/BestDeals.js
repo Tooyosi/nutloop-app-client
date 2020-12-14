@@ -23,7 +23,7 @@ export default function BestDeals(props) {
                 <Link to={props.link.to} className="text-success small">{props.link.text}</Link>
             </div>
             <div className="col-12">
-                <MultiCaroucel  responsive={{desktop: 6, mobile: 2, tablet: 4}}>
+                <MultiCaroucel autoPlay={true}  responsive={{desktop: 6, mobile: 2, tablet: 4}}>
 
                     <div className="product-div">
                         <img src={TomatoesImg} />

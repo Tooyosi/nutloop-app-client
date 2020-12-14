@@ -6,7 +6,9 @@
   min-width: 0;
   transition: $sidebar-transition;
   flex-direction: column;
-  background-color: #F4F4F4;
+  // background-color: #F4F4F4;
+  background-color: white;
+
   .content{
     flex: 1;
   }
@@ -16,23 +18,38 @@
 }
 
 footer{
-  background-color: $white;
+  background-color: $success;
+  // background-color: $white;
+  margin-top: 30px;
   padding-top: 40px;
-  padding-bottom: 40px;
-  color: #282828;
+  // padding-bottom: 40px;
+  // color: #282828;
+  color: $white;
   p{
     margin: 5px auto !important;
   }
   a{
     font-size: small;
-    color: #282828;
+    // color: #282828;
+    color: $white;
     &:hover{
-      color: #282828;
+      // color: #282828;
+    color: $white;
+
 
     }
   }
 }
 
+.social-icons{
+  background-color:  #6AAD57 !important;
+  padding-top: 10px !important;
+  padding-bottom: 30px !important;
+}
 .cursor-pointer{
   cursor: pointer;
+}
+
+.decoration-none{
+  text-decoration: none !important;
 }

@@ -44,7 +44,7 @@ const SidebarCategory = withRouter(
           {/* {image !== null ? <>{image}</> :
             Icon ? <Icon size={18} className="align-middle mr-3" /> : null
           } */}
-          <Icon size={18} className="align-middle mr-3" />
+          {image !== null ? <>{image}</> : Icon ? <Icon size={18} className="align-middle mr-3" /> : null}
           <span className="align-middle">{name}</span> {' '}
           {badgeColor && badgeText ? (
             <Badge color={badgeColor} size={18} className="sidebar-badge">
@@ -153,9 +153,9 @@ class Sidebar extends Component {
                 <PerfectScrollbar>
 
                   <div className="sidebar-brand">
-                    {/* <Link to="/">
-                      <Logo style={{ maxWidth: "160px" }} alt="MerchantBox" />
-                    </Link> */}
+                    <Link to="/">
+                      <Logo style={{ maxWidth: "160px" }} alt="Nutloop" />
+                    </Link>
                   </div>
 
                   {/* Dynamo Logo */}
@@ -175,6 +175,7 @@ class Sidebar extends Component {
                               badgeText={category.badgeText}
                               icon={category.icon}
                               to={category.path}
+                              image={category.image}
                               isOpen={this.state[index]}
                               onClick={() => this.toggle(index)}
                             >

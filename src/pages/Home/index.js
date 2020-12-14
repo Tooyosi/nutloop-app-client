@@ -1,11 +1,12 @@
 import React from 'react';
-import { Row, Col } from 'reactstrap';
+import { Row, Col, Button, Input } from 'reactstrap';
 import BestDeals from './BestDeals';
 import TopSelling from './TopSelling';
 import { toggleAddToCart } from '../../redux/actions/popupAction';
 import { useDispatch } from 'react-redux'
 import AdsComponent from './AdsComponent';
-
+import PlaystoreImg from "../../assets/images/icons/playstore.png"
+import AppstoreImg from "../../assets/images/icons/appstore.png"
 function Home(props) {
     const dispatch = useDispatch()
     let shoModal = () => {
@@ -20,7 +21,7 @@ function Home(props) {
             </Row>
             <Row>
                 <Col sm="12">
-                    <BestDeals toggleAddToCart={shoModal} header="Best Deals" link={{text: "All Products", to: "/products"}} data={[]}/>
+                    <BestDeals toggleAddToCart={shoModal} header="Best Deals" link={{ text: "All Products", to: "/products" }} data={[]} />
                 </Col>
             </Row>
             <hr />
@@ -40,6 +41,26 @@ function Home(props) {
             </Row>
             <hr />
             <TopSelling toggleAddToCart={shoModal} />
+
+            <Row className="my-4  py-5">
+                <Col md="6">
+                    <h2>Download the App now.</h2>
+                    <p className="text-justify">Experience a unique shopping experience like you have never had on the Nutloop app. On the app you can shop and share foodstuff with other users, you can chat with other users who you follow or people who follow you, you can also receive general or personalized notifications etc. Shop foodstuff directly from farmers and wholesalers at your convenience. Download the app and enjoy discounts on your food and grocery shopping. Available on android and iOs.</p>
+                    <a><img className="mr-3" width="150" src={PlaystoreImg} /></a>
+                    <a><img width="150" src={AppstoreImg} /></a>
+                </Col>
+                <Col md="6">
+                    <h3>New to Nutloop?</h3>
+                    <p>Subscribe to out Newsletter to get updates on our latest offers</p>
+                    <div className="search-div d-flex ">
+
+                        <Input type="email" placeholder="Enter Your Email Address" />
+                        <Button color="warning" className="text-white">
+                            Subscribe
+                        </Button>
+                    </div>
+                </Col>
+            </Row>
             <hr className="mb-2" />
 
         </>

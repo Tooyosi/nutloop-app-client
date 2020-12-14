@@ -6,7 +6,7 @@ import {
   Redirect
 } from "react-router-dom";
 import {
-  landing as landingRoutes,
+  landing as authRoutes,
   dashboard as dashboardRoutes
 } from "./index";
 
@@ -51,7 +51,7 @@ const Routes = () => (
   <Router>
     <ScrollToTop>
       <Switch>
-        {/* {childRoutes(DashboardLayout, landingRoutes)} */}
+        {childRoutes(LandingLayout, authRoutes)}
         {childRoutes(DashboardLayout, dashboardRoutes)}
         {/*{childRoutes(AdminDashboardLayout, adminDashboardRoutes)}*/}
         <Redirect from="/dashboard/*" to="/dashboard"/>

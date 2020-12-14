@@ -84,7 +84,7 @@ const AddToCartForm = (props) => {
                             <Icofont icon="check-circled" size="5" className="text-success " />
 
                             <Button onClick={doCancel} color="success" className="btn-block text-white my-3">Continue Shopping</Button>
-                            <Button type="button" outline color="success" className="btn-block">Proceed to Checkout</Button>
+                            <a href="/cart"  className="btn btn-outline-success btn-block">Proceed to Checkout</a>
 
                         </Col>
                     </Row>
@@ -103,11 +103,11 @@ export default function Dashboard({ children }) {
         <AuthGuard>
             <CartGuard>
                 <Wrapper>
-                    <Sidebar isToggled={toggled} />
+                    {/* <Sidebar isToggled={toggled} /> */}
                     <Main>
                         <Navbar updateToggle={updateToggle} />
                         <div className="content">
-                            <Container fluid >
+                            <Container >
                                 {children}
                             </Container>
                         </div>

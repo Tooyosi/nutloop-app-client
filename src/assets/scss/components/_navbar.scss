@@ -1,11 +1,42 @@
 .navbar {
     // border-bottom: $navbar-border-bottom;
     // box-shadow: $navbar-box-shadow;
-  
     @include media-breakpoint-down(md) {
       width: 100vw;
     }
-    border-bottom: 1px solid $search-form-bg;
+    // border-bottom: 1px solid $search-form-bg;
     margin-bottom: 10px;
+    
+  }
+
+  .second-nav{
+    background: #000 !important;
+      .nav-link{
+      color: $white !important;
+      transition: .5s;
+    }
+    .nav-link{
+      font-size: 20px;
+
+    }
+    .active, .nav-link:hover{
+      color: $yellow !important;
+
+    }
+
+    .nav-link:hover{
+      font-weight: bold;
+    }
+    .dropdown{
+      button{
+        .nav-link{
+          color: #000 !important;
+          transition: .9s;
+        }
+        .active, .nav-link:hover{
+          color: $yellow !important;
+        }
+      }
+    }
   }
   
